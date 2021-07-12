@@ -1,0 +1,44 @@
+buildscript{
+    ext{
+        springBootVersion = "2.1.7.RELEASE"
+    }
+    repositories{
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+apply plugin:'java'
+apply plugin:'eclipse'
+apply plugin:'org.springframework.boot'
+apply plugin:'io.spring.dependency-management' //스프링 부트의 의존성들을 관리해주는 플러그인
+
+repositories { //라이브러리 관리. jcenter통해 관리가 쉬워졌다.
+    mavenCentral()
+    jcenter()
+}
+dependencies { //의존성 선언
+    compile('org.springframework.boot:spring-boot-starter-web:')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+//plugins {
+//    id 'java'
+//}
+//
+//group 'org.example'
+//version '1.0-SNAPSHOT'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
