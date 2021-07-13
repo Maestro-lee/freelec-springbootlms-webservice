@@ -21,6 +21,9 @@ repositories { //라이브러리 관리. jcenter통해 관리가 쉬워졌다.
 }
 dependencies { //의존성 선언
     compile('org.springframework.boot:spring-boot-starter-web:')
+    compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 //plugins {
